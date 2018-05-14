@@ -1,40 +1,29 @@
 @charset "utf-8";
 
-body {
-  margin: 10px;
-  padding: 10px;
+html, body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
 }
 
-
-
 header {
-  padding: 10px;
   height: 100px;
   xbackground-color: #f1f1f1;
   box-sizing: border-box;
-  border: 2px solid #333;
-  border-bottom: 0px;
+  border-bottom: 2px black solid;
+}
+
+aside {
+  xbackground: cyan;
+  width: 220px;
+  height: calc(100% - 100px);
+  box-sizing: border-box;
+  border-right  : 2px black solid;
 }
 
 main {
-  xbackground-color: #fafafa;
-
-}
-
-.m-left {
-  xbackground-color: pink;
-  width: 220px;
-  float:  left;
-  height: 800px;
-  box-sizing: border-box;
-  border: 2px solid #333;
-  border-right: 0px;
-}
-
-.m-right {
-  xbackground-color: gray;
   margin-left: 220px;
-  height: 800px;
-  box-sizing: border-box;
-  border: 2px solid #333;
+  xbackground-color: pink;
+  height: calc(100% - 100px);
+  margin-top: calc(-100vh + 100px);
 }
