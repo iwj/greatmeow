@@ -1,0 +1,61 @@
+@charset "utf-8";
+body {
+  margin: 0px;
+}
+
+.car {
+  color: #fff;
+  height: 100vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  border-bottom: 1px #fafafa solid;
+  text-shadow: 2px 2px 10px #333;
+}
+
+.car-1 {
+  background-color: #f99;
+  background-image: url(https://files3.porsche.com/filestore/image/multimedia/none/982-718-bo-modelimage-sideshot/model/08c829b3-d7eb-11e6-a122-0019999cd470/porsche-model.png);
+}
+
+.car-2 {
+  background-color: #99f;
+  background-image: url(https://files3.porsche.com/filestore/image/multimedia/none/982-718-c7-gts-modelimage-sideshot/model/ada180e4-ae78-11e7-b591-0019999cd470/porsche-model.png);
+}
+
+.car-3 {
+  background-color: #9f9;
+  background-image: url(https://files2.porsche.com/filestore/image/multimedia/none/982-718-c7-modelimage-sideshot/model/d3b4f827-3356-11e8-bbc5-0019999cd470/porsche-model.png);
+}
+
+h2.mimall {
+  margin-top: calc(100vh - 225px);
+}
+
+.mimall-back {
+  height: 225px;
+  width: 225px;
+  background-repeat: no-repeat;
+  transition: 0.2s;
+  background-image: url(https://i0.hdslb.com/bfs/archive/be06808687a0eb892744bc7ec701372fab74357e.jpg);
+  background-size: 360px 225px;
+  margin-bottom: calc(100vh - 280px);
+}
+
+.mimall-back:hover {
+  background-position: -135px 0px;
+}
+
+.glassy-bg {
+  xwidth: 100vw;
+  height: 100vh;
+  background: fixed no-repeat url(https://meyerweb.com/eric/css/edge/complexspiral/glassy-bg.jpg);
+}
+
+.glassy-ripple {
+  xmargin: 20px;
+  padding: 200px 0px 0px 200px;
+  background: fixed no-repeat url(https://meyerweb.com/eric/css/edge/complexspiral/glassy-ripple.jpg);
+  background-position: 0 0;
+}
