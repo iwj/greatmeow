@@ -7,7 +7,7 @@
   <style>
     .screen {
       width: 640px;
-      height: 1136px;
+      xheight: 340px;
       background-color: #efeff4;
       border: 1px solid #fff;
     }
@@ -30,7 +30,7 @@
       box-sizing: border-box;
     }
 
-    label {
+    .switch-bg {
       color: #333;
       background-color: #4cd964;
       width: 102px;
@@ -72,6 +72,35 @@
       background-color: #fff;
       margin-left: 0px;
     }
+
+    /* twitter heart */
+
+    #id-heart {
+      display: none;
+    }
+
+    .animation-bg {
+      background-image: url(https://abs.twimg.com/a/1526339738/img/animations/web_heart_animation_edge.png);
+      width: 100px;
+      height: 100px;
+      background-position: 0px 0px;
+      display: inline-block;
+      box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+      background-repeat: no-repeat;
+    }
+
+    #id-heart:checked+label {
+      animation: .5s heart-animation forwards steps(28);
+    }
+
+    @keyframes heart-animation {
+      from {
+        background-position: -0px 0px;
+      }
+      to {
+        background-position: -2800px 0px;
+      }
+    }
   </style>
   <title>iOS checkbox</title>
 </head>
@@ -84,11 +113,14 @@
     <!-- 外边框：宽102 高62  内部按钮：直径56px 按钮与底部间隙：3px -->
     <div class="row">
       <input type="checkbox" id="id-switch">
-      <label for="id-switch">
+      <label class="switch-bg" for="id-switch">
         <p class="lever"></p>
       </label>
     </div>
   </div>
+  <h1>Twitter heart-animation</h1>
+  <input type="checkbox" id="id-heart">
+  <label class="animation-bg" for="id-heart"></label>
 </body>
 
 </html>
