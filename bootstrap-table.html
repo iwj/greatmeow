@@ -5,36 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Bootstrap table</title>
-  <style media="screen">
-    body {
-      padding: 0px 20px;
-    }
-
-    .table {
-      text-align: left;
-      line-height: 3rem;
-      border-collapse: collapse;
-      width: 100%;
-      max-width: 100%;
-      margin-bottom: 1rem;
-    }
-
-    .table thead {
-      border-top: 1px solid #dee2e6;
-    }
-
-    .table thead th {
-      border-bottom: 2px solid #dee2e6;
-    }
-
-    .table tbody tr {
-      border-bottom: 1px solid #dee2e6;
-    }
-
-    .table tbody tr:last-child {
-      border-bottom: none;
-    }
-  </style>
+  <link rel="stylesheet" href="bootstrap-table.css">
 </head>
 
 <body>
@@ -69,6 +40,178 @@
       </tr>
     </tbody>
   </table>
+
+  <h1>.table-hover</h1>
+  <div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>First</th>
+          <th>Last</th>
+          <th>Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>mark</td>
+          <td>otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>Jack</td>
+          <td>Thoms</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <h1>.table-bordered</h1>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>First</th>
+        <th>Last</th>
+        <th>Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>1</th>
+        <td>mark</td>
+        <td>otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th>2</th>
+        <td>Jack</td>
+        <td>Thoms</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th>3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
 </body>
+<h1>.table-striped</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First</th>
+      <th>Last</th>
+      <th>Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>mark</td>
+      <td>otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Jack</td>
+      <td>Thoms</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+<h1>Always responsive</h1>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Headingmoretext</th>
+        <th scope="col">Headingmoretext</th>
+        <th scope="col">Headingmoretext</th>
+        <th scope="col">Headingmoretext</th>
+        <th scope="col">Heading</th>
+        <th scope="col">Heading</th>
+        <th scope="col">Heading</th>
+        <th scope="col">Heading</th>
+        <th scope="col">Heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 </html>
