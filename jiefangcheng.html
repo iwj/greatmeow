@@ -1,35 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>解方程 - Solving equations</title>
-</head>
-<body>
-  <p>特殊值：a=0.5 b=1 c=0.5 可以得到x1、x2相等的情况</p>
 <script type="text/javascript">
-  console.log("一元二次方程")
   var a = Number(prompt('input a'))
   var b = Number(prompt('input b'))
   var c = Number(prompt('input c'))
   var x1 = (-b + Math.sqrt(b**2 - 4 * a * c)) / (2 * a)
   var x2 = (-b - Math.sqrt(b**2 - 4 * a * c)) / (2 * a)
-
   if (x1 == x2) {
     console.log('x='+x1)
-  }else{
-    if((b**2 - 4 * a * c) < 0) {
+  } else {
+    if ((b**2 - 4 * a * c) < 0) {
       console.log('（复数）x1='+x1)
       console.log('（复数）x2='+x2)
-    }else{
+    } else {
       console.log('（实数）x1='+x1)
       console.log('（实数）x2='+x2)
     }
   }
+</script>
 
-  console.log("二元一次方程")
-  //典型的方程组
-  //a1x + b1y = c1
-  //a2x + b2y = c2
-  //https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D107/sign=283e4def04f41bd5de53ecf466db81a0/b219ebc4b74543a9d706500814178a82b80114d0.jpg
+<script type="text/javascript">
   var a1 = Number(prompt('input a1'))
   var b1 = Number(prompt('input b1'))
   var c1 = Number(prompt('input c1'))
@@ -45,5 +33,3 @@
     console.log('y=' + (c1 * a2 - c2 * a1) / (b1 * a2 - b2 * a1))
   }
 </script>
-</body>
-</html>
