@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>画图</title>
+  <style>
+    canvas {
+      border: 2px solid #f0f;
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="400" height="300"></canvas>
+</body>
+<script>
+  var cvs = document.querySelector('canvas')
+  var ctx = cvs.getContext('2d')
+
+  function dot(x, y, color = 'black') {
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, 1, 1)
+  }
+</script>
+<script>
+  var i
+  var j
+  var b // RGB 里的蓝色
+  var g // RGB 里的绿色
+  var dot_color = '#333'
+  for (i = 0, j = 0; i < 300, j < 300; i++, j++) {
+    dot(i, j, dot_color)
+  }
+
+  for (i = 0; i < 400; i++) {
+    dot(i, 10, dot_color)
+  }
+
+  for (i = 0; i < 400; i += 2) {
+    dot(i, 20, dot_color)
+  }
+
+  for (i = 0; i < 400; i += 4) {
+    dot(i, 30, dot_color)
+    dot(i + 1, 30, dot_color)
+  }
+
+  for (i = 0; i < 400; i += 6) {
+    dot(i, 40, dot_color)
+    dot(i + 1, 40, dot_color)
+    dot(i + 2, 40, dot_color)
+  }
+
+  for (i = 50; i < 150; i ++) {
+    j = Math.sqrt(2500 - (i - 100)**2)
+    dot(i, 100 + j, dot_color)
+    dot(i, 100 - j, dot_color)
+  }
+
+  for (j = 50; j < 150; j ++) {
+    i = Math.sqrt(2500 - (j - 100)**2)
+    dot(100 + i, j, dot_color)
+    dot(100 - i, j, dot_color)
+  }
+
+  for (i = 146; i < 195; i++) {
+    for (j = 146; j < 195; j++) {
+      dot(i, j, dot_color)
+    }
+  }
+
+  for (i = 210, b = 0; i < 274; i++, b += 4) {
+    for (j = 210, g = 255; j < 274; j++, g -= 4) {
+      dot(i, j, 'rgb(255,' + g + ',' + b + ')')
+    }
+  }
+
+  for (i = 0, j = 0; i < 400, j < 300; i += 1.333333 ,j++) {
+    dot(i, j, '#f33')
+  }
+  
+</script>
+</html>
