@@ -1,0 +1,347 @@
+<script type="text/javascript" id="ch0105/01">
+
+  // 求平均年龄
+  var n = Number(prompt("Number of students:"))
+  var sum = 0
+  for (var i = 0; i < n; i++) {
+    sum += Number(prompt("The " + (i + 1) + "th student's mark:"))
+  }
+  console.log((sum / n).toFixed(2))
+
+</script>
+
+<script type="text/javascript" id="ch0105/02">
+  
+  //财务管理
+  var sum = 0
+  for (var i = 0; i < 12; i++) {
+    sum += Number(prompt("The " + (i + 1) + "th month's cash balance:"))
+  }
+  console.log((sum / 12).toFixed(2))
+
+</script>
+
+<script type="text/javascript" id="ch0105/03">
+
+  // 均值
+  var n = Number(prompt("input n:"))
+  var sum = 0
+  for (var i = 0; i < n; i++) {
+    sum += Number(prompt("The " + (i + 1) + "th float number:"))
+  }
+  console.log((sum / i).toFixed(4))
+
+</script>
+
+<script type="text/javascript" id="ch0105/04">
+
+  // 求整数的和与平均值
+  var n = Number(prompt("input n:"))
+  var sum = 0
+  for (var i = 0; i < n; i++) {
+    sum += Number(prompt("input the " + (i + 1) + "th number:"))
+  }
+  console.log(sum)
+  console.log((sum / i).toFixed(5))
+
+</script>
+
+<script type="text/javascript" id="ch0105/05">
+
+  // 最高的分数
+  var n = Number(prompt("input n:"))
+  var x
+  var bigger
+  for (var i = 0; i < n; i++) {
+    x = Number(prompt("input number:"))
+    if (i < 1) {
+      bigger = x
+    } else {
+      if (x > bigger) {
+        bigger = x
+      }
+    }
+  }
+  console.log(bigger)
+
+</script>
+
+<script type="text/javascript" id="ch0105/06">
+
+  // 整数序列的元素最大跨度值
+  var n = Number(prompt("input the length of number list:"))
+  var x
+  var bigger
+  var smaller
+  for (var i = 0; i < n; i++) {
+    x = Number(prompt("input number:"))
+    if (i < 1) {
+      bigger = smaller = x
+    } else {
+      if (x > bigger) {
+        bigger = x
+      }
+      if (x < smaller) {
+        smaller = x
+      }
+    }
+  }
+  console.log(bigger - smaller)
+
+</script>
+
+<script type="text/javascript" id="ch0105/07">
+
+  //奥运奖牌计数
+  var n = Number(prompt("input the number of days:"))
+  var gold = 0
+  var silver = 0
+  var bronze = 0
+  for (var i = 0; i < n; i++) {
+    gold += Number(prompt("the gold medals number of " + (i + 1) +"th day:"))
+    silver += Number(prompt("the silver medals number of " + (i + 1) +"th day:"))
+    bronze += Number(prompt("the bronze medals number of " + (i + 1) +"th day:"))
+  }
+  console.log(gold, silver, bronze, gold + silver + bronze)
+
+</script>
+
+<script type="text/javascript" id="ch0105/08">
+
+  // 多边形内角和
+  var n = Number(prompt("input the number of polygon's side"))
+  var sum = 0
+  for (var i = 1; i < n; i++) {
+    sum += Number(prompt("input the " + i + "angle:"))
+  }
+  console.log((n-2)*180 - sum)
+
+</script>
+
+<script type="text/javascript" id="ch0105/09">
+
+  // 奇数求和
+  var m = Number(prompt("input m:"))
+  var n = Number(prompt("input n:"))
+  var sum = 0
+  for (var i = m; i <= n; i++) {
+    if (i % 2 == 1) {
+      sum += i
+    }
+  }
+  console.log(sum)
+
+</script>
+
+<script type="text/javascript" id="ch0105/010">
+
+  // 满足条件的数累加
+  var m = Number(prompt("input m:"))
+  var n = Number(prompt("input n:"))
+  var sum = 0
+  for (var i = m; i <= n; i++) {
+    if (i % 17 == 0) {
+      sum += i
+    }
+  }
+  console.log(sum)
+
+</script>
+
+<script type="text/javascript" id="ch0105/011">
+
+  // 整数的个数
+  var n = Number(prompt("input the number of integers:"))
+  var x
+  var counter_1 = 0
+  var counter_5 = 0
+  var counter_10 = 0
+  for (var i = 0; i < n; i++) {
+    x = Number(prompt("input number(1 ≤ x ≤ 10):"))
+    if (x == 1) {
+      counter_1 ++
+    }
+    if (x == 5) {
+      counter_5 ++
+    }
+    if (x == 10) {
+      counter_10 ++
+    }
+  }
+  console.log(counter_1)
+  console.log(counter_5)
+  console.log(counter_10)
+
+</script>
+
+<script type="text/javascript" id="ch0105/012">
+
+  // 与指定数字相同的数的个数
+  var n = Number(prompt("input n:"))
+  var global_number = Number(prompt("input the global number:"))
+  var x
+  var counter = 0
+  for (var i = 0; i < n; i++) {
+    x = Number(prompt("input x:"))
+    if (x == global_number) {
+      counter ++
+    }
+  }
+  console.log(counter)
+
+</script>
+
+<script type="text/javascript" id="ch0105/013">
+
+  // 乘方计算
+  var a = Number(prompt("input a:"))
+  var n = Number(prompt("input n:"))
+  var product = 1
+  for (var i = 0; i < n; i++) {
+    product *= a
+  }
+  console.log(product)
+
+</script>
+
+<script type="text/javascript" id="ch0105/014">
+
+  // 人口增长问题
+  var x = Number(prompt("input the population base number x:"))
+  var n = Number(prompt("input the year n:"))
+  for (var i = 0; i < n; i++) {
+    x *= 1.001
+  }
+  console.log(x.toFixed(4))
+
+</script>
+
+<script type="text/javascript" id="ch0105/015">
+
+  // 银行利息
+  var r = Number(prompt("请输入复合年利率"))
+  var m = Number(prompt("请输入本金"))
+  var y = Number(prompt("请输入存款年数"))
+  for (var i = 0; i < y; i++) {
+    m *= (1 + r / 100)
+  }
+  console.log(parseInt(m))
+
+</script>
+
+<script type="text/javascript" id="ch0105/016">
+
+  // 买房子
+  var n = Number(prompt("输入年薪n："))
+  var k = Number(prompt("房子每年涨幅k："))
+  var sum = 0
+  var price = 200
+  var get = false
+  for ( var i = 0; i < 20; i++) {
+    //console.log("当前是第n轮循环：" + (i+1))
+    if (i == 0) {
+      sum = n
+      price = 200
+    } else {
+      sum += n
+      price *= (k / 100 + 1)
+    }
+    if (sum >= price) {
+      console.log(i + 1)
+      get = true
+      break
+    }
+  }
+  if (!get) {
+    console.log("Impossible")
+  }
+
+</script>
+
+<script type="text/javascript" id="ch0105/017">
+
+  // 斐波那契数列
+  var k = Number(prompt("输入一个正整数k:"))
+  var fibonacci
+  var previous_1
+  var previous_2
+  for (var i = 1; i <= k; i++) {
+    if (i == 1 || i == 2) {
+      fibonacci = 1
+      previous_1 = 1
+      previous_2 = 1
+    } else { // 第3个开始
+      fibonacci = previous_1 + previous_2
+      previous_2 = previous_1
+      previous_1 = fibonacci
+    }
+  }
+  console.log(fibonacci)
+  
+</script>
+
+<script type="text/javascript" id="ch0105/018">
+
+  // 鸡尾酒疗法
+  var n = Number(prompt("input n:"))
+  var total_case
+  var valid_case
+  var cocktail_therapy
+  for (var i = 1; i <= n; i++) {
+    total_case = Number(prompt("input total case:"))
+    valid_case = Number(prompt("input valid case:"))
+    if (i == 1) {
+      cocktail_therapy = valid_case / total_case
+    } else {
+      if (valid_case / total_case - cocktail_therapy > 0.05) {
+        console.log( valid_case / total_case - cocktail_therapy)
+        console.log("better")
+      } else if (valid_case / total_case - cocktail_therapy < -0.05) {
+        console.log( valid_case / total_case - cocktail_therapy)
+        console.log("worse")
+      } else {
+        console.log("same")
+      }
+    }
+  }
+
+</script>
+
+<script type="text/javascript" id="ch0105/019">
+
+  // 救援
+  var n = Number(prompt("input the number of roofs:"))
+  var x
+  var y
+  var num
+  var sum = 0
+  for (var i = 0; i < n; i++) {
+    x = Number(prompt("input x coordinates"))
+    y = Number(prompt("input y coordinates"))
+    num = Number(prompt("input number of people:"))
+    sum += Math.sqrt(x**2 + y**2) / 50 * 2 + 1.5 * num
+  }
+  console.log(Math.ceil(sum))
+
+</script>
+
+<script type="text/javascript" id="ch0105/020">
+
+  // 球弹跳高度的计算
+  var h = Number(prompt("input the initial height:"))
+  var i = 0
+  var sum = 0
+  do {
+    if (i == 0) {
+      sum = h
+      h /= 2
+    } else {
+      sum += h * 2
+      h /= 2
+    }
+    i++
+  } while (i < 2)
+  console.log(sum)
+  console.log(h)
+
+</script>
