@@ -79,6 +79,12 @@
   for (i = 0, j = 0; i < 400, j < 300; i += 1.333333 ,j++) {
     dot(i, j, '#f33')
   }
+
+  var y
+  for (i = 0; i < 400; i++) {
+    y = Math.sin(i)
+    dot (i, y + 150, 'red')
+  }
   
 </script>
 </html>

@@ -406,3 +406,158 @@
   console.log(h)
 
 </script>
+
+<script id="sort" sample-input="4 1 7" sample-output="1 4 7" comment="输入三个数，把此三个数按升序输出">
+  var a = Number(prompt("input a:"))
+  var b = Number(prompt("input b:"))
+  var c = Number(prompt("input c:"))
+  var temp
+  if (a <= b && a <= c) { // 当a是三者中最小
+    if (b > c) {
+      temp = b
+      b = c
+      c = temp
+    }
+  }
+  if (b <= a && b <= c) { // 当b是三者中最小
+    temp = a
+    a = b
+    b = temp
+    if (b > c) {
+      temp = b
+      b = c
+      c = temp
+    }
+  }
+  if (c <= b && c <= a) { // 当c是三者中最小
+    temp = c
+    c = a
+    a = temp
+    if (b > c) {
+      temp = b
+      b = c
+      c = temp
+    }
+  }
+  console.log(a,b,c)  
+</script>
+
+<script id="narcissistic " sample-input="153" sample-output="YES" comment="判断一个数是否为水仙花数">
+  var  x = Number(prompt("input a number:"))
+  digit_of_1 = x % 10
+  digit_of_10 = parseInt(x / 10) % 10
+  digit_of_100 = parseInt(x / 100) % 10
+  if (digit_of_1**3 + digit_of_10**3 + digit_of_100**3 == x) {
+    console.log("YES")
+  } else {
+    console.log("NO")
+  }
+</script>
+<script id="narcissistics" sample-input="" sample-output="" comment="找出100到10000以内所有的水仙花数">
+  // 题目：水仙花数。水仙花数是指一个N位的十进制数，其各位数的N次方的和等于它自己。
+  // 如：153 =　1的三次方+5的三次方+3的三次方，则153就是一个水仙花数
+  // 或：1634 =　1的四次方+6的四次方+3的四次方+4的四次方
+  // 因为1634是一个四位数。
+  // 找出100到100000以内所有的水仙花数。
+  for (var i = 100; i < 100000; i++) {
+    number_length = String(i).length
+    if (number_length == 3) {
+      digit_of_1 = i % 10
+      digit_of_10 = parseInt(i / 10) % 10
+      digit_of_100 = parseInt(i / 100) % 10
+      if (digit_of_1**3 + digit_of_10**3 + digit_of_100**3 == i) {
+        console.log(i)
+      }
+    }
+    if (number_length == 4) {
+      digit_of_1 = i % 10
+      digit_of_10 = parseInt(i / 10) % 10
+      digit_of_100 = parseInt(i / 100) % 10
+      digit_of_1000 = parseInt(i / 1000) % 10
+      if (digit_of_1**4 + digit_of_10**4 + digit_of_100**4 + digit_of_1000**4 == i) {
+        console.log(i)
+      }
+    }
+
+    if (number_length == 5) {
+      digit_of_1 = i % 10
+      digit_of_10 = parseInt(i / 10) % 10
+      digit_of_100 = parseInt(i / 100) % 10
+      digit_of_1000 = parseInt(i / 1000) % 10
+      digit_of_10000 = parseInt(i / 10000) % 10
+      if (digit_of_1**5 + digit_of_10**5 + digit_of_100**5 + digit_of_1000**5 + digit_of_10000**5 == i) {
+        console.log(i)
+      }
+    }
+  }
+</script>
+
+<script id="palindrom" sample-input="12321" sample-output="YES" comment="判断一个非负整数是否为回文数字">
+  var n = prompt("输入一个数字判断是不是回文数：")
+  if (n.length % 2 == 0) {
+    //
+  } else {
+    //
+  }
+  harf_length = Math.floor(n.length / 2)
+  for (var i = 0; i < harf_length; i++) {
+    //
+  }
+  for (var i = n.length; i > harf_length; i--) {
+    //
+  }
+
+</script>
+
+<script id="weekday" sample-input="2018 6" sample-output="5" comment="输入年份与月份，给出该年该月的第一天是星期几">
+  // 1.设定一个基准天，确定该天的日期和星期
+  // 2.写出所有是闰年的条件，4、100、400、3200、172800......
+  // 3.计算输入的月份的第一天距离基准天的距离天数，计算差，除以7，余数为0或是1-6，假设基准天是星期一
+  // 4.则输入月份的第一天是星期（1+余数）
+</script>
+<script id="complete-number" sample-input="6" sample-output="YES" comment="判断一个数是否为完全数">
+  
+</script>
+<script id="complete-numbers" sample-input="" sample-output="" comment="输出10000以内所有的完全数">
+  
+</script>
+<script id="prime" sample-input="7" sample-output="YES" comment="判断一个数是否为素数">
+  var x = Number(prompt("input a number:"))
+  var counter = 0
+  for (var i = 1; i <= x; i++) {
+    if (x % i == 0) {
+      counter++
+    }
+  }
+  if (counter > 2) {
+    console.log("NO")
+  } else {
+    console.log("YES")
+  }
+</script>
+<script id="primes" sample-input="" sample-output="" comment="输出100以内所有的素数">  
+  for (var x = 1; x <= 100; x++) {
+    var counter = 0
+    for (var i = 1; i <= x; i++) {
+      if (x % i == 0) {
+        counter++
+      }
+    }
+    if (counter == 2) {
+      console.log(x)
+    }
+  }  
+  
+</script>
+<script id="itob" sample-input="123" sample-output="123" comment="数字转换成字符串">
+  console.log(String(Number(prompt("input a number:"))))
+</script>
+<script id="lcf&lcm" sample-input="12 9" sample-output="36 3" comment="给定两个数，求它们的最小公倍数和最大公约数">
+  
+</script>
+<script id="7" sample-input="" sample-output="" comment="敲7">
+  
+</script>
+<script id="sqrt" sample-input="2" sample-output="1.414" comment="不使用Math.sqrt，求一个非负数的平方根，至少精确到小数点后3位">
+  
+</script>
