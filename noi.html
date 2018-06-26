@@ -453,41 +453,17 @@
     console.log("NO")
   }
 </script>
-<script id="narcissistics" sample-input="" sample-output="" comment="找出100到10000以内所有的水仙花数">
-  // 题目：水仙花数。水仙花数是指一个N位的十进制数，其各位数的N次方的和等于它自己。
-  // 如：153 =　1的三次方+5的三次方+3的三次方，则153就是一个水仙花数
-  // 或：1634 =　1的四次方+6的四次方+3的四次方+4的四次方
-  // 因为1634是一个四位数。
-  // 找出100到100000以内所有的水仙花数。
-  for (var i = 100; i < 100000; i++) {
-    number_length = String(i).length
-    if (number_length == 3) {
-      digit_of_1 = i % 10
-      digit_of_10 = parseInt(i / 10) % 10
-      digit_of_100 = parseInt(i / 100) % 10
-      if (digit_of_1**3 + digit_of_10**3 + digit_of_100**3 == i) {
-        console.log(i)
-      }
-    }
-    if (number_length == 4) {
-      digit_of_1 = i % 10
-      digit_of_10 = parseInt(i / 10) % 10
-      digit_of_100 = parseInt(i / 100) % 10
-      digit_of_1000 = parseInt(i / 1000) % 10
-      if (digit_of_1**4 + digit_of_10**4 + digit_of_100**4 + digit_of_1000**4 == i) {
-        console.log(i)
-      }
-    }
 
-    if (number_length == 5) {
-      digit_of_1 = i % 10
-      digit_of_10 = parseInt(i / 10) % 10
-      digit_of_100 = parseInt(i / 100) % 10
-      digit_of_1000 = parseInt(i / 1000) % 10
-      digit_of_10000 = parseInt(i / 10000) % 10
-      if (digit_of_1**5 + digit_of_10**5 + digit_of_100**5 + digit_of_1000**5 + digit_of_10000**5 == i) {
-        console.log(i)
-      }
+<script id="narcissistics" sample-input="" sample-output="" comment="找出100到10000以内所有的水仙花数">
+  for (var i = 100; i < 100000; i++) {
+    var numberLength = String(i).length
+    var numberArray = String(i).split("")
+    var powerSum = 0
+    for (var j = 0; j < numberLength; j++) {
+      powerSum += Math.pow(parseInt(numberArray[j]),numberLength)
+    }
+    if (powerSum == i){
+      console.log(i)
     }
   }
 </script>
@@ -510,17 +486,128 @@
 </script>
 
 <script id="weekday" sample-input="2018 6" sample-output="5" comment="输入年份与月份，给出该年该月的第一天是星期几">
-  // 1.设定一个基准天，确定该天的日期和星期
-  // 2.写出所有是闰年的条件，4、100、400、3200、172800......
-  // 3.计算输入的月份的第一天距离基准天的距离天数，计算差，除以7，余数为0或是1-6，假设基准天是星期一
-  // 4.则输入月份的第一天是星期（1+余数）
+  var yearInput = Number(prompt("year:"))
+  var monthInput = Number(prompt("month:"))
+  var dayTheLazyUser = 1
+  console.log(calcWhatDayIsItToday(yearInput, monthInput, dayTheLazyUser))
+
+  function calcWhatDayIsItToday(year = 2018, month = 2, day = 2) {
+    // 设置一个基准的天 1980-01-01 星期二
+    var days = 0
+    // 1.计算1980至今所有年份的天数（不包含用户输入的“今年”）
+    for (var i = year-1; i >= 1980; i--) {
+      if (isLeapYear(i)) {
+        days += 366
+      } else {
+        days += 365
+      }
+    }
+    // 2.加上“今年”所有月份的天数，不包含“本月”
+    month -= 1
+    while (month > 0) {
+      switch (month) {
+      case 12:
+        days += 31
+        break
+      case 11:
+        days += 30
+        break
+      case 10:
+        days += 31
+        break
+      case 9:
+        days += 30
+        break
+      case 8:
+        days += 31
+        break
+      case 7:
+        days += 31
+        break
+      case 6:
+        days += 30
+        break
+      case 5:
+        days += 31
+        break
+      case 4:
+        days += 30
+        break
+      case 3:
+        days += 31
+        break
+      case 2:
+        if (isLeapYear(year)) {
+          days += 29
+        } else {
+          days += 28
+        }
+        break
+      case 1:
+        days += 31
+        break
+      }
+      month--
+    }
+    // 3.加上“本月”已经逝去的天数 (；′⌒`)
+    days += day
+    // 4.求余
+    if ((days - 1 + 2) % 7 == 0) {
+      return 7
+    } else{
+      return ((days - 1 + 2) % 7)
+    }
+  }
+  function isLeapYear(year) {
+    if (year % 3200 == 0) {
+      return false
+    } else {
+      if (year % 400 == 0) {
+        return true
+      } else {
+        if (year % 100 == 0) {
+          return false
+        } else {
+          if (year % 4 == 0) {
+            return true
+          } else {
+            return false
+          }
+        }
+      }
+    }
+  }
 </script>
+
 <script id="complete-number" sample-input="6" sample-output="YES" comment="判断一个数是否为完全数">
-  
+  var n = Number(prompt("input a number:"))
+  var sum = 0
+  for (var i = 1; i < n; i++) {
+    if (n % i == 0) {
+      sum += i
+    }
+  }
+  if (sum == n) {
+    console.log("YES")
+  } else {
+    console.log("NO")
+  }
 </script>
+
 <script id="complete-numbers" sample-input="" sample-output="" comment="输出10000以内所有的完全数">
-  
+  for (var i = 1; i < 10000; i++) {
+    var sum = 0
+    for (var j = 1; j < i; j++) {
+      if (i % j == 0) {
+        sum += j
+      }
+    }
+    if (sum == i) {
+      console.log(i)
+    }
+  }  
 </script>
+
 <script id="prime" sample-input="7" sample-output="YES" comment="判断一个数是否为素数">
   var x = Number(prompt("input a number:"))
   var counter = 0
@@ -535,6 +622,7 @@
     console.log("YES")
   }
 </script>
+
 <script id="primes" sample-input="" sample-output="" comment="输出100以内所有的素数">  
   for (var x = 1; x <= 100; x++) {
     var counter = 0
@@ -546,12 +634,13 @@
     if (counter == 2) {
       console.log(x)
     }
-  }  
-  
+  }
 </script>
+
 <script id="itob" sample-input="123" sample-output="123" comment="数字转换成字符串">
   console.log(String(Number(prompt("input a number:"))))
 </script>
+
 <script id="lcf&lcm" sample-input="12 9" sample-output="36 3" comment="给定两个数，求它们的最小公倍数和最大公约数">
   
 </script>
@@ -560,4 +649,14 @@
 </script>
 <script id="sqrt" sample-input="2" sample-output="1.414" comment="不使用Math.sqrt，求一个非负数的平方根，至少精确到小数点后3位">
   
+</script>
+
+<script type="text/javascript" comment="九九乘法表">
+  for (var i = 1; i <= 9; i++) {
+    var str = ''
+    for (var j = 1; j <= i; j++) {
+      str += j + " × " + i + " = " + i*j + "\t"
+    }
+    console.log(str + "\n")
+  }
 </script>
