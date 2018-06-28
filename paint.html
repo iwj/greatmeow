@@ -81,9 +81,9 @@
   }
 
   var y
-  for (i = 0; i < 400; i++) {
-    y = Math.sin(i)
-    dot (i, y + 150, 'red')
+  for (i = 0; i < 400; i += .1) {
+    y = 10 * Math.sin(i)
+    dot (10 * i, y + 150, 'red')
   }
   
 </script>
