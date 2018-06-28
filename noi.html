@@ -693,3 +693,63 @@
     console.log(str + "\n")
   }
 </script>
+
+<!-- 2018年6月27日作业 -->
+<script type="text/javascript" comment="分解质因数">
+  var n = Number(prompt("input a number:"))
+  
+  //直到它自己变成一个质数前，一直除以自己的约数（质数），从最小质数2开始
+  while (!isPrimeNumber(n)) {
+    for (var i = 2; i <= n; i++) {
+      // if (!isPrimeNumber(i)) { // 此处可以不用判断，因为
+      //   continue               // 如果 i 是合数，表示 i 有自己的约数
+      // }                        // 能被 i 整除的数，必定能被 i 的约数整除。
+                                  // 比如 12，不用担心12/6的情形，因为在这之前已经12/2=6 -> 6/3=2了
+      if (n % i == 0) {
+        console.log(i)
+        n /= i
+        break
+      }
+    }
+  }  
+
+  function isPrimeNumber(x) {
+    var counter = 0
+    for (var i = 1; i <= x; i++) {
+      if (x % i == 0) {
+        counter += 1
+      }      
+    }
+    if (counter == 2) {
+      return true
+    } else {
+      return false
+    }
+  }
+</script>
+
+<script type="text/javascript" comment="找出最小的能被1到20所有数整除的数">
+  var numberCeil = 20
+  var numberFloor = 1
+  console.log(calcLcm(numberCeil))
+
+  function calcLcm(x) {
+    if (x == 1) {
+      return numberFloor
+    } else {
+      return lcm(x, calcLcm(x - 1))
+    }
+  }
+
+  function lcm(x, y){
+    var procudt = x * y
+    while (x != y) {
+      if (x > y) {
+        x -= y
+      } else {
+        y -= x
+      }
+    }
+    return procudt / x
+  }
+</script>
