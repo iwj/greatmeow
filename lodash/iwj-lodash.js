@@ -20,5 +20,18 @@ var iwj = {
     }
     return result
   },
+
+  concat: function() {
+    // 拼接元素，得到一个新数组
+    if (arguments.length === 0) {
+      return []
+    }
+    var result = []
+    for (var i = 0, item; item = arguments[i++];) {
+      result = result.concat(item)
+    }
+    return result
+  },
   
 }
+
