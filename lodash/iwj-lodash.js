@@ -1,15 +1,15 @@
 var iwj = {
   // “Array” Methods
-  _.chunk(array, n) {
+  chunk: function(array, n) {
     // 块：将数组按照指定长度进行分块
     var result = []
     while (array.length > 0) {
       result.push(array.splice(0, n))
     }
     return result
-  }
+  },
 
-  _.compact(array) {
+  compact: function(array) {
     // 紧凑（裁员）：去掉数组里不优雅的元素 false, null, 0, "", undefined, and NaN
     var i = 0, result = []
     while (i < array.length) {
@@ -19,6 +19,6 @@ var iwj = {
       i++
     }
     return result
-  }
+  },
   
 }
