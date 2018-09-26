@@ -72,6 +72,19 @@ var iwj = {
 
   dropRightWhile: function() {},
 
+  dropWhile: function(array, arg) {
+    switch (typeof arg) {
+      case "string":
+      break;
+      case "object":
+      break;
+      case "function":
+      break;
+      case "array":
+      break;
+    }
+  },
+
   fill: function(array, value, start = 0, end) {
     if (end) {
       return array.fill(value, start, end)
@@ -83,5 +96,26 @@ var iwj = {
   findIndex: function() {},
 
   findLastIndex: function() {},
+
+  head: function(array) {
+    if (array === []) {
+      return undefined
+    } else {
+      return array[0]
+    }
+  },
+
+  flatten: function(array) {
+    // TODO 下次尝试用 Array.map() 实现一遍
+    for (var i = 0; i < array.length; i++) {
+      if (array[i] instanceof Array) {
+        let leftPart = array.splice(0, i)
+        let rightPart = array.splice(1)
+        i += (array[0].length - 1)
+        array = leftPart.concat(array[0]).concat(rightPart)
+      }
+    }
+    return array
+  },
 }
 
